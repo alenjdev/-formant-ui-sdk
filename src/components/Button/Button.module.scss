@@ -1,0 +1,118 @@
+@import "../../styles/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400&display=swap");
+@import "../../styles/transitions.scss";
+
+.btn {
+  background-color: $formant-color-highlights-blue;
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  width: auto;
+  letter-spacing: 1.5px;
+  border-radius: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 200ms;
+  min-width: 120px;
+  height: 41px;
+  -webkit-transition: $button-transition;
+  -moz-transition: $button-transition;
+  -ms-transition: $button-transition;
+  -o-transition: $button-transition;
+
+  &:hover {
+    cursor: pointer;
+    will-change: background-color, color, border-color, box-shadow;
+  }
+  &-mini {
+    min-width: 53px;
+    height: 20px;
+    font-size: 11px;
+  }
+  &-small {
+    height: 30px;
+    min-width: 98px;
+    padding: 8px 25px;
+  }
+  &-medium {
+    min-width: 120px;
+    height: 41px;
+  }
+  &-large {
+    height: 41px;
+    min-width: 180px;
+    font-size: 14px;
+    padding: 12px 30px;
+  }
+  &-primary {
+    background-color: $formant-color-highlights-blue;
+    color: $formant-color-primary-black;
+    box-shadow: 0 0 0 0 $formant-color-highlights-blue;
+    &:hover {
+      box-shadow: 0 0 0 0.4rem $formant-color-highlights-blue;
+    }
+    &:disabled {
+      color: $formant-color-primary-steel02;
+      border: 1px solid $formant-color-primary-steel02;
+      background: transparent;
+      &:hover {
+        cursor: default;
+        transform: none;
+      }
+    }
+  }
+  &-secondary {
+    background-color: $formant-color-primary-silver;
+    color: $formant-color-primary-black;
+    box-shadow: 0 0 0 0 $formant-color-primary-silver;
+    &:hover {
+      box-shadow: 0 0 0 0.4rem $formant-color-primary-silver;
+    }
+    &:disabled {
+      color: $formant-color-primary-steel02;
+      border: 1px solid $formant-color-primary-steel02;
+      background: transparent;
+      &:hover {
+        cursor: default;
+        transform: none;
+      }
+    }
+  }
+  &-tertiary {
+    background-color: $formant-color-primary-module;
+    color: $formant-color-primary-silver;
+    box-shadow: 0 0 0 0 $formant-color-primary-module;
+    &:hover {
+      box-shadow: 0 0 0 0.4rem $formant-color-primary-module;
+    }
+    &:disabled {
+      color: $formant-color-primary-steel02;
+      border: 1px solid $formant-color-primary-steel02;
+      background: transparent;
+      &:hover {
+        cursor: default;
+        transform: none;
+      }
+    }
+  }
+  &-exit {
+    background-color: $formant-color-severity-levels-red;
+    color: $formant-color-primary-black;
+    box-shadow: 0 0 0 0 $formant-color-severity-levels-red;
+    &:hover {
+      box-shadow: 0 0 0 0.4rem $formant-color-severity-levels-red;
+    }
+    &:disabled {
+      color: $formant-color-severity-levels-red;
+      border: 1px solid $formant-color-severity-levels-red;
+      background: transparent;
+      &:hover {
+        cursor: default;
+        transform: none;
+      }
+    }
+  }
+}
