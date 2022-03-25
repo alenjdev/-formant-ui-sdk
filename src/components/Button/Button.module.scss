@@ -28,7 +28,7 @@
     will-change: background-color, color, border-color, box-shadow;
   }
   &-mini {
-    min-width: 53px;
+    min-width: 5.3rem;
     height: 20px;
     font-size: 11px;
   }
@@ -36,10 +36,12 @@
     height: 30px;
     min-width: 98px;
     padding: 8px 25px;
+    font-size: 12px;
   }
   &-medium {
     min-width: 120px;
     height: 41px;
+    font-size: 14px;
   }
   &-large {
     height: 41px;

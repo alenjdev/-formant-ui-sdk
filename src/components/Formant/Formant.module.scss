@@ -1,0 +1,33 @@
+@import "../../styles/colors.scss";
+
+:root {
+  box-sizing: border-box;
+  font-size: 10px;
+  background-color: $formant-color-primary-flagship;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: $formant-color-primary-flagship;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2.5rem;
+  height: 3rem;
+  background-color: $formant-color-primary-silver;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.formant {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: $formant-color-primary-flagship;
+}
