@@ -19,14 +19,10 @@ const Button: React.FC<IButtonProps> = ({
   bold,
   disabled,
 }) => {
-  const onClicked = () => {
-    if (disabled) return;
-    if (!!onClick) onClick;
-  };
   return (
     <button
       disabled={disabled}
-      onClick={onClicked}
+      onClick={onClick}
       style={{ fontWeight: bold ? 600 : 400 }}
       className={`
       ${styles.btn} 
