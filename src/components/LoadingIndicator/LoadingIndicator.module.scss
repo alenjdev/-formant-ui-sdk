@@ -1,0 +1,12 @@
+.indicator {
+  height: 2.4rem;
+  &-small {
+    height: 1.5rem;
+  }
+  &-medium {
+    height: 2.4rem;
+  }
+  &-large {
+    height: 4.8rem;
+  }
+}

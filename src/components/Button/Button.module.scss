@@ -63,6 +63,7 @@
       &:hover {
         cursor: default;
         transform: none;
+        box-shadow: 0 0 0 0 $formant-color-highlights-blue;
       }
     }
   }
@@ -80,6 +81,7 @@
       &:hover {
         cursor: default;
         transform: none;
+        box-shadow: 0 0 0 0 $formant-color-primary-silver;
       }
     }
   }
@@ -97,6 +99,7 @@
       &:hover {
         cursor: default;
         transform: none;
+        box-shadow: 0 0 0 0 $formant-color-primary-module;
       }
     }
   }
@@ -114,6 +117,7 @@
       &:hover {
         cursor: default;
         transform: none;
+        box-shadow: 0 0 0 0 $formant-color-severity-levels-red;
       }
     }
   }
