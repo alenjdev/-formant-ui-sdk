@@ -1,6 +1,10 @@
 {
   "name": "@alenjdev/ui-sdk",
+<<<<<<< HEAD
   "version": "0.0.5",
+=======
+  "version": "0.0.4",
+>>>>>>> 8d1c13d128bc70865a4b8bcb75a9f9a3c76ec4de
   "description": "Formant UI Library",
   "publishConfig": {
     "access": "public"
