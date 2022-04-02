@@ -14,12 +14,14 @@ export const Menu = Template.bind({});
 Menu.args = {
   size: "medium",
   name: "menu",
+  color: "red",
 };
 
 export const Device = Template.bind({});
 Device.args = {
-  size: "medium",
+  size: "large",
   name: "device",
+  color: "silver",
 };
 
 export const Access = Template.bind({});
