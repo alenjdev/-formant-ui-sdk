@@ -3,7 +3,6 @@
 :root {
   box-sizing: border-box;
   font-size: 10px;
-  background-color: $formant-color-primary-flagship;
   margin: 0;
   padding: 0;
 }
@@ -21,13 +20,21 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
+  overflow-x: hidden;
 }
 
 .formant {
+  position: relative;
   margin: 0;
-  padding: 0;
-  min-height: 100%;
+  padding: 1rem;
+  min-height: 100vh;
   min-width: 100%;
   background-color: $formant-color-primary-flagship;
+  &-application {
+    background-color: $formant-color-primary-flagship;
+  }
+  &-module {
+    background-color: $formant-color-primary-module;
+  }
 }

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+@import "../../styles/colors.scss";
+
+.typography {
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  -webkit-font-smoothing: "antialiased";
+
+  &-display {
+    font-size: 5rem;
+    line-height: 6rem;
+    font-weight: 300;
+  }
+  &-h1 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+  &-h2 {
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+    letter-spacing: 1px;
+  }
+  &-h3 {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+  }
+  &-h4 {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+  &-body {
+    font-size: 1.6rem;
+    line-height: 2.7rem;
+    letter-spacing: 1px;
+  }
+  &-list {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    letter-spacing: 0.5px;
+    color: $formant-color-primary-silver;
+  }
+  &-label {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: $formant-color-primary-silver;
+  }
+  &-minimum {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: $formant-color-primary-silver;
+  }
+}

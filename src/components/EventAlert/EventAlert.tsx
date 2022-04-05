@@ -1,43 +1,78 @@
-import styles from "./ErrorMsg.module.scss";
+import styles from "./EventAlert.module.scss";
 import { FC, useEffect } from "react";
 import React from "react";
-// import { WarningIcon } from "./WarningIcon";
-// import { CloseIcon } from "./CloseIcon";
+import Icon from "../Icon/index";
+import Typography from "../Typography";
 
-interface IErrorMsgProps {
+export interface IEventAlert {
   msg: string;
-  onClose: () => void;
+  eventType: "open" | "info" | "warning" | "error" | "critical";
+  // onClose?: () => void;
 }
 
-export const ErrorMsg: FC<IErrorMsgProps> = ({ msg, onClose }) => {
+const EventAlert: FC<IEventAlert> = ({ msg, eventType }) => {
   useEffect(() => {
-    const errorMessage = document.getElementById("error-msg");
-    errorMessage?.classList.remove("slide-right");
-    errorMessage?.classList.add("slide-left");
+    const eventAlert = document.getElementById("event-alert");
+    eventAlert?.classList.remove("slide-right");
+    eventAlert?.classList.add("slide-left");
     setTimeout(() => {
-      errorMessage?.classList.remove("slide-left");
-      errorMessage?.classList.add("slide-right");
-      setTimeout(() => onClose(), 1000);
+      eventAlert?.classList.remove("slide-left");
+      eventAlert?.classList.add("slide-right");
+      setTimeout(() => {
+        // onClose();
+      }, 1000);
     }, 10000);
   }, []);
 
+  const onClose = () => {
+    const eventAlert = document.getElementById("event-alert");
+    eventAlert?.classList.remove("slide-left");
+    eventAlert?.classList.add("slide-right");
+    setTimeout(() => {
+      // onClose()
+    }, 1000);
+  };
+
   return (
-    <div id="error-msg" className={styles.error}>
-      <div className={styles["error-icon"]}>
-        {/* <WarningIcon /> */}
-        <p>{`Warning: ${msg}`}</p>
+    <div
+      id="event-alert"
+      className={`${styles["event-alert"]} ${
+        styles[`event-alert-${eventType}`]
+      }`}
+    >
+      <div className={styles["event-alert-icon"]}>
+        {eventType === "warning" ? (
+          <>
+            <Icon size="medium" name="warning" />
+            <Typography type="h3">Error:</Typography>
+          </>
+        ) : eventType === "error" ? (
+          <>
+            <Icon size="medium" name="warning" />
+            <Typography type="h3">Warning:</Typography>
+          </>
+        ) : eventType === "critical" ? (
+          <>
+            <Icon size="medium" name="critical" />
+            <Typography type="h3">Critical:</Typography>
+          </>
+        ) : eventType === "info" ? (
+          <>
+            <Icon size="medium" name="info" />
+          </>
+        ) : (
+          <>
+            <Icon size="medium" name="event" />
+            <Typography type="h3">Event:</Typography>
+          </>
+        )}
+        <Typography type="h3">{msg}</Typography>
       </div>
-      <div
-        onClick={() => {
-          const errorMessage = document.getElementById("error-msg");
-          errorMessage?.classList.remove("slide-left");
-          errorMessage?.classList.add("slide-right");
-          setTimeout(() => onClose(), 1000);
-        }}
-        className={styles["error-close"]}
-      >
-        {/* <CloseIcon /> */}
+      <div onClick={onClose} className={styles["event-alert-close"]}>
+        <Icon size="medium" name="close" />
       </div>
     </div>
   );
 };
+
+export default EventAlert;

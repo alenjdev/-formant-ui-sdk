@@ -1,8 +1,16 @@
 import * as React from "react";
 import styles from "./Formant.module.scss";
 
-const Formant: React.FC = ({ children }) => {
-  return <div className={styles.formant}>{children}</div>;
+export interface IFormantProps {
+  type?: "application" | "module";
+}
+
+const Formant: React.FC<IFormantProps> = ({ children, type }) => {
+  return (
+    <div className={`${styles.formant} ${styles[`formant-${type}`]}`}>
+      {children}
+    </div>
+  );
 };
 
 export default Formant;
