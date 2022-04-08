@@ -11,18 +11,18 @@ export interface IEventAlert {
 }
 
 const EventAlert: FC<IEventAlert> = ({ msg, eventType }) => {
-  useEffect(() => {
-    const eventAlert = document.getElementById("event-alert");
-    eventAlert?.classList.remove("slide-right");
-    eventAlert?.classList.add("slide-left");
-    setTimeout(() => {
-      eventAlert?.classList.remove("slide-left");
-      eventAlert?.classList.add("slide-right");
-      setTimeout(() => {
-        // onClose();
-      }, 1000);
-    }, 10000);
-  }, []);
+  // useEffect(() => {
+  //   const eventAlert = document.getElementById("event-alert");
+  //   eventAlert?.classList.remove("slide-right");
+  //   eventAlert?.classList.add("slide-left");
+  //   setTimeout(() => {
+  //     eventAlert?.classList.remove("slide-left");
+  //     eventAlert?.classList.add("slide-right");
+  //     setTimeout(() => {
+  //       // onClose();
+  //     }, 1000);
+  //   }, 10000);
+  // }, []);
 
   const onClose = () => {
     const eventAlert = document.getElementById("event-alert");

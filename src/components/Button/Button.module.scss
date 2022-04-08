@@ -11,7 +11,7 @@
   border: none;
   outline: none;
   width: auto;
-  letter-spacing: 1.5px;
+  letter-spacing: .5px;
   border-radius: 25px;
   padding-left: 10px;
   padding-right: 10px;
@@ -46,7 +46,7 @@
   &-large {
     height: 41px;
     min-width: 180px;
-    font-size: 14px;
+    font-size: 2rem;
     padding: 12px 30px;
   }
   &-primary {
