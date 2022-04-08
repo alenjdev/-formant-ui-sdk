@@ -1,66 +1,155 @@
 @import "../../styles/colors.scss";
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
 
-
-.field{
+.field {
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  color: white;
+  letter-spacing: 0.5px;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: dotted 0.063rem $formant-color-primary-silver;
+  max-height: 6.1rem;
+  min-width: 25rem;
+  width: 100%;
+  &:focus-within {
+    border-bottom: none;
+  }
+  &-error {
+    border-bottom: none;
+    label {
+      color: $formant-color-severity-levels-red !important;
+    }
+    input {
+      border: 1px solid $formant-color-severity-levels-red;
+    }
+    input:focus {
+      border: 1px solid $formant-color-severity-levels-red;
+    }
+  }
+  &-input {
+    &:focus {
+      border: solid 1px $formant-color-highlights-blue;
+      background: $formant-color-primary-black;
+      border-radius: 0.4rem;
+      outline: none;
+    }
+    &-large {
+      height: 6rem;
+    }
+    &-small {
+      height: 4rem;
+      padding: 0 1.5rem;
+    }
     box-sizing: border-box;
-    font-family: "Work Sans", sans-serif;
-    color: white;
-    letter-spacing: .5px;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-    border-bottom: dotted 0.063rem $formant-color-primary-silver;
-    max-height: 6.1rem;
-    min-width: 25rem;
-    width: 100%;
-    &:focus-within{
-        border-bottom: none;
-        label{
-            top: .8rem;
-            font-size: 1.3rem;
-            text-align: left;
-            pointer-events: none;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            color: $formant-color-highlights-blue;
-        }
+    letter-spacing: inherit;
+    height: 6rem;
+    max-height: 6rem;
+    padding: 1.8rem 2rem 0px;
+    background-color: $formant-color-primary-steel02;
+    color: inherit;
+    line-height: 4rem;
+    font-size: inherit;
+    border-radius: 0.4rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    flex: 1;
+    border: 0.063rem solid $formant-color-primary-steel02;
+    -webkit-transition: border-color 200ms ease-in-out 0ms,
+      color 200ms ease-in-out 0ms, background-color 200ms ease-in-out 0ms,
+      padding 200ms ease-in-out 0ms;
+    will-change: border-color, color, background-color, padding;
+  }
+  &-label {
+    background: none;
+    top: 2rem;
+    font-size: 1.9rem;
+    left: 2rem;
+    color: $formant-color-primary-silver;
+    position: absolute;
+    -webkit-transition: top 100ms ease-in-out 0ms;
+    will-change: top;
+    &:hover {
+      cursor: text;
     }
+    &-small {
+      top: 1rem;
+      font-size: 1.5rem;
+      left: 1.3rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+}
 
-    &-input{
-        &:focus {
-            border: solid 1px $formant-color-highlights-blue;
-            background: $formant-color-primary-black;
-            border-radius: .4rem;
-            outline: none;
-        }
-        box-sizing: border-box;
-        letter-spacing: inherit;
-        height: 6rem;
-        max-height: 6rem;
-        padding: 1.8rem 2rem 0px;
-        background-color: $formant-color-primary-steel02;
-        color: inherit;
-        line-height: 4rem;
-        font-size: inherit;
-        border-radius: .4rem;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        flex: 1;
-        border: 0.063rem solid $formant-color-primary-steel02;
-        -webkit-transition: border-color 200ms ease-in-out 0ms , color 200ms ease-in-out 0ms , background-color 200ms ease-in-out 0ms , padding 200ms ease-in-out 0ms;
-        will-change: border-color , color , background-color , padding;
+.field-input:focus ~ .field-label {
+  color: $formant-color-highlights-blue;
+}
+
+.field-input:focus ~ .field-label,
+.field-input:not(:placeholder-shown).field-input:not(:focus) ~ .field-label {
+  top: 0.8rem;
+  font-size: 1.3rem;
+  text-align: left;
+  pointer-events: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.field-input:focus ~ .field-label-small,
+.field-input:not(:placeholder-shown).field-input:not(:focus)
+  ~ .field-label-small {
+  left: 1.5rem;
+  top: -0.8rem;
+  font-size: 1rem;
+  margin: 0 -0.5rem;
+  text-align: left;
+  pointer-events: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: #2d3855;
+  border-radius: 0.6rem;
+}
+
+.simple {
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &-input {
+    &-error {
+      border-bottom: 0.063rem solid $formant-color-severity-levels-red !important;
+      &:focus {
+        border-bottom: 0.063rem dotted $formant-color-severity-levels-red !important;
+      }
     }
-    &-label{
-        background: none;
-        top: 2rem;
-        font-size: 1.9rem;
-        left: 2rem;
-        color: $formant-color-primary-silver;
-        position: absolute;
-        -webkit-transition: top 100ms ease-in-out 0ms;
-        will-change: top;
+    font-family: inherit;
+    font-size: 3.5rem;
+    border: none;
+    outline: none;
+    border-bottom: 0.063rem dotted $formant-color-primary-silver;
+    background-color: transparent;
+    color: white;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+    &:focus {
+      border-bottom: 0.063rem solid $formant-color-highlights-blue;
     }
+    &::placeholder {
+      font-family: inherit;
+      color: $formant-color-primary-silver;
+    }
+  }
+  span {
+    font-family: inherit;
+    color: $formant-color-primary-silver;
+    font-style: italic;
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+  }
 }
