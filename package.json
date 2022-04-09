@@ -1,6 +1,6 @@
 {
   "name": "@alenjdev/ui-sdk",
-  "version": "0.0.10",
+  "version": "0.0.13",
   "description": "Formant UI Library",
   "publishConfig": {
     "access": "public"
@@ -52,5 +52,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@formant/data-sdk": "^0.0.64"
+  }
 }
