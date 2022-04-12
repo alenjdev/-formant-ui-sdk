@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from "./Button.module.scss";
+import LoadingIndicator from "../LoadingIndicator/index";
 
 export interface IButtonProps {
   onClick?: () => void;
@@ -8,6 +9,7 @@ export interface IButtonProps {
   type: "primary" | "secondary" | "tertiary" | "exit";
   bold?: boolean;
   disabled?: boolean;
+  loading?: boolean;
 }
 
 const Button: React.FC<IButtonProps> = ({
@@ -18,10 +20,11 @@ const Button: React.FC<IButtonProps> = ({
   type,
   bold,
   disabled,
+  loading,
 }) => {
   return (
     <button
-      disabled={disabled}
+      disabled={disabled || loading}
       onClick={onClick}
       style={{ fontWeight: bold ? 600 : 400 }}
       className={`
@@ -30,7 +33,7 @@ const Button: React.FC<IButtonProps> = ({
       ${styles[`btn-${type}`]} 
       ${className}`}
     >
-      {children}
+      {loading ? <LoadingIndicator /> : children}
     </button>
   );
 };

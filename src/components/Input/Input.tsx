@@ -9,10 +9,10 @@ export interface IInputProps {
   name?: string;
   helperText?: string;
   placeHolder?: string;
-  className: string;
+  className?: string;
   onChange:
-    | React.Dispatch<React.SetStateAction<string>>
-    | ((_: string) => void);
+    | React.Dispatch<React.SetStateAction<string | number>>
+    | ((_: string | number) => void);
 }
 
 const Input: React.FC<IInputProps> = ({

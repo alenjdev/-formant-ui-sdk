@@ -1,6 +1,6 @@
 import { Authentication, Fleet } from "@formant/data-sdk";
-import { useEffect, useState } from "react";
 import useDevice from "./useDevice";
+import { useState, useEffect } from "react";
 
 type AggregateLevel =
   | "year"
@@ -29,31 +29,36 @@ type DataType =
 
 const useQueryTelemetryByDays = (
   types: DataType[],
-  days: number | string | undefined,
+  rangeInDays?: string | number | undefined,
   aggregate?: AggregateLevel
 ) => {
   const device = useDevice();
-  const [queryTelemetry, setQueryTelemetry] = useState<any[]>();
+
+  const [values, setvalues] = useState<any[]>();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getQueryTelemetry();
-  }, [device]);
+    setQuery(rangeInDays);
+  }, [rangeInDays]);
 
-  const getQueryTelemetry = async () => {
+  const setQuery = async (days: string | number | undefined) => {
     if (device === undefined) return;
-    let telemetry: any[] = [];
+    if (days === undefined) return;
+    setIsLoading(true);
     if (await Authentication.waitTilAuthenticated()) {
-      telemetry = await Fleet.queryTelemetry({
+      let telemetry = await Fleet.queryTelemetry({
         start: getStartISODate(days),
         end: new Date().toISOString(),
         aggregate,
         types: types,
         deviceIds: [device.id],
       });
+      setvalues(telemetry);
+      setIsLoading(false);
     }
-    setQueryTelemetry(telemetry);
   };
-  return queryTelemetry;
+
+  return [values, setQuery, isLoading] as const;
 };
 
 const getStartISODate = (range: number | string | undefined) => {

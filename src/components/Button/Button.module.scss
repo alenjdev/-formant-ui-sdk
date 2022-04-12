@@ -11,12 +11,12 @@
   border: none;
   outline: none;
   width: auto;
-  letter-spacing: .5px;
-  border-radius: 25px;
-  padding-left: 10px;
-  padding-right: 10px;
+  letter-spacing: 0.5px;
+  border-radius: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   transition: 200ms;
-  min-width: 120px;
+  min-width: 12rem;
   height: 41px;
   -webkit-transition: $button-transition;
   -moz-transition: $button-transition;

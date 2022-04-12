@@ -1,6 +1,6 @@
 {
   "name": "@alenjdev/ui-sdk",
-  "version": "0.0.13",
+  "version": "0.0.24",
   "description": "Formant UI Library",
   "publishConfig": {
     "access": "public"
@@ -30,15 +30,16 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.3.12",
     "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^8.0.0",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.34",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "eslint-plugin-react-hooks": "^4.4.0",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
-    "react": "^17.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-postcss": "^4.0.1",
@@ -47,13 +48,15 @@
     "style-loader": "^3.3.1",
     "typescript": "^4.4.4"
   },
+  "peerDependencies": {
+    "@formant/data-sdk": "^0.0.64",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
-  "dependencies": {
-    "@formant/data-sdk": "^0.0.64"
-  }
+  "types": "dist/index.d.ts"
 }
